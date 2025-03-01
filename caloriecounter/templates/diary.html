@@ -1,0 +1,28 @@
+{% extends "caloriecounter/layout.html" %}
+
+{% block body %}
+
+<h2>Diary</h2>
+
+{% for profile in profiles %}
+
+{{ profile.calorie_goal }}
+
+{{ profile.activity }}
+    
+{% endfor %}
+
+Carbs Protein Fat
+
+<br>
+    {{ gram_of_carb }} g/ g
+    {{ gram_of_protein }} g / g
+    {{ gram_of_fat }} g/ g
+
+     <br>  
+<!-- 
+    {{ carbs }} klc 
+    {{ protein }} klc 
+    {{ fat }} klc -->
+
+{% endblock %}

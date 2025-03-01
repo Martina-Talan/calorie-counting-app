@@ -1,0 +1,19 @@
+{% extends "caloriecounter/layout.html" %}
+
+{% block body %}
+
+<h2>Carbs</h2>
+
+<form action="{% url 'carbs' %}" method="post"></form>
+    {% csrf_token %} 
+    <label for="carbs">Carbs %</label><br>
+    <input type="number" id="carbs" name="carbs" value="50"><br><br>
+
+
+    <input class="btn btn-primary" type="submit" value="Save">  
+</form>
+
+
+
+
+{% endblock %}

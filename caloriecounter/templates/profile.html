@@ -1,0 +1,47 @@
+{% extends "caloriecounter/layout.html" %}
+
+{% block body %}
+
+<h2>Create profile</h2>
+    
+<form action="{% url 'diary' %}" method="post">
+    {% csrf_token %} 
+    <div class="form-group">
+        <label for="your_goal">Your goal:</label><br>
+        <select id="goals" name="goals">
+            <option value="lose_weight">Lose Weight</option>
+            <option value="gain_muscle">Gain Muscle<ption>
+            <option value="maintenance">Maintenance</option>
+          </select><br><br>
+        <label for="start_weight">Start Weight:</label><br>
+        <input type="text" id="start_weight" name="start_weight" value=""><br><br>
+        <label for="goal_weight">Goal Weight:</label><br>
+        <input type="text" id="goal_weight" name="goal_weight" value=""><br><br>
+        <label for="week_goal_to_lose_or_gain">Week Goal:</label><br>
+        <input type="text" id="week_goal_to_lose_or_gain" name="week_goal_to_lose_or_gain" value=""><br><br>
+        <label for="calorie_goal">Calorie Goal:</label><br>
+        <input type="text" id="calorie_goal" name="calorie_goal" value=""><br><br>
+        <label for="activity">Activity:</label><br>
+        <select id="activity" name="activity">
+            <option value="low">Low</option>
+            <option value="moderate">Moderate<option>
+            <option value="high">High</option>
+          </select><br><br>
+    </div>
+     Your nutrition goal:
+
+    <label for="carbs">Carbs %</label><br>
+    <input type="number" id="carbs-input" name="carbs" value="50%" placeholder="50%" min="0" max="100"><br><br>
+    <label for="protein">Protein %</label><br>
+    <input type="number" id="protein-input" name="protein" value="25%" placeholder="25%" min="0" max="100"><br><br>
+    <label for="fat">Fat %</label><br>
+    <input type="number" id="fat-input" name="fat" value="25%" placeholder="25%" min="0" max="100"><br><br>
+
+    <p id="sum-display" placeholder="100">Total: <span id="total-percentage">100</span></p>
+
+    <input class="btn btn-primary" type="submit" value="Create profile">  
+   
+</form> 
+
+
+{% endblock %}
